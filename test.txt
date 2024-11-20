@@ -1,0 +1,14 @@
+#!/bin/bash
+yum update -y
+yum install -y httpd.x86_64
+systemctl start httpd.service
+systemctl enable httpd.service
+echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+
+
+
+User: arn:aws:iam::515966504016:user/new-user
+Service: iam
+Action: ListRoles
+On resource(s): arn:aws:iam::515966504016:role/
+Context: no identity-based policy allows the action
